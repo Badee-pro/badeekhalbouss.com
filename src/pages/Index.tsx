@@ -1,13 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from "react-helmet-async";
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Work from "@/components/Work";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>Jane Doe | Designer & Developer</title>
+        <meta
+          name="description"
+          content="Jane Doe is a creative professional crafting thoughtful digital experiences at the intersection of design and technology. View portfolio and get in touch."
+        />
+        <meta property="og:title" content="Jane Doe | Designer & Developer" />
+        <meta
+          property="og:description"
+          content="Creative professional crafting thoughtful digital experiences at the intersection of design and technology."
+        />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://janedoe.com" />
+      </Helmet>
+
+      <div className="min-h-screen">
+        <Navigation />
+        <main>
+          <Hero />
+          <About />
+          <Work />
+          <Contact />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
