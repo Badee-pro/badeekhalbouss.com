@@ -1,6 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import ResumeSection from "@/components/sections/ResumeSection";
+import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -25,6 +28,9 @@ const Index = () => {
         <Navigation />
         <main>
           <Hero />
+          <ProjectsSection />
+          <ResumeSection />
+          <ContactSection />
         </main>
         <Footer />
       </div>

@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const Hero = () => {
+  const handleScrollTo = (id: string) => {
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Scanline overlay */}
@@ -89,11 +95,11 @@ const Hero = () => {
 
               {/* CTA buttons */}
               <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-                <Button variant="retro" size="lg" asChild>
-                  <Link to="/projects">View Projects</Link>
+                <Button variant="retro" size="lg" onClick={() => handleScrollTo("#projects")}>
+                  View Projects
                 </Button>
-                <Button variant="retro-outline" size="lg" asChild>
-                  <Link to="/resume">View Resume</Link>
+                <Button variant="retro-outline" size="lg" onClick={() => handleScrollTo("#resume")}>
+                  View Resume
                 </Button>
               </div>
             </div>

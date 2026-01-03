@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,11 +14,18 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
-    { href: "/resume", label: "Resume" },
-    { href: "/contact", label: "Contact" },
+    { href: "#projects", label: "Projects" },
+    { href: "#resume", label: "Resume" },
+    { href: "#contact", label: "Contact" },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav
@@ -40,19 +46,13 @@ const Navigation = () => {
         <ul className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link
-                to={link.href}
-                className={`font-body text-sm uppercase tracking-wider transition-colors relative ${
-                  location.pathname === link.href
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
+              <a
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="font-body text-sm uppercase tracking-wider transition-colors text-muted-foreground hover:text-foreground cursor-pointer"
               >
-                {location.pathname === link.href && (
-                  <span className="mr-1">&gt;</span>
-                )}
                 {link.label}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
