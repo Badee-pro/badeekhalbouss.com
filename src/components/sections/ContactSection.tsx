@@ -1,11 +1,20 @@
 import { Button } from "@/components/ui/button";
-import { Mail, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import { Mail, MapPin, Linkedin, Github, Instagram } from "lucide-react";
+
+// X (Twitter) icon component since lucide doesn't have the new X logo
+const XIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 const ContactSection = () => {
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub", handle: "@yourname" },
-    { icon: Linkedin, href: "#", label: "LinkedIn", handle: "/in/yourname" },
-    { icon: Twitter, href: "#", label: "Twitter", handle: "@yourname" },
+    { icon: Github, href: "https://github.com/yourname", label: "GitHub", handle: "@yourname" },
+    { icon: Linkedin, href: "https://linkedin.com/in/yourname", label: "LinkedIn", handle: "/in/yourname" },
+    { icon: XIcon, href: "https://x.com/yourname", label: "X", handle: "@yourname" },
+    { icon: Instagram, href: "https://instagram.com/yourname", label: "Instagram", handle: "@yourname" },
+    { icon: Mail, href: "mailto:your@email.com", label: "Email", handle: "your@email.com" },
   ];
 
   return (
@@ -67,7 +76,7 @@ const ContactSection = () => {
               <p className="font-retro text-xl text-muted-foreground mb-4">
                 <span className="text-primary">&gt;</span> Find me online:
               </p>
-              <div className="grid sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
