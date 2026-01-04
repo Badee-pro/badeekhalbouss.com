@@ -5,6 +5,7 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import ResumeSection from "@/components/sections/ResumeSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/Footer";
+import NavigationContextMenu from "@/components/NavigationContextMenu";
 
 const Index = () => {
   return (
@@ -24,16 +25,20 @@ const Index = () => {
         <link rel="canonical" href="https://yourname.dev" />
       </Helmet>
 
-      <div className="min-h-screen">
-        <Navigation />
-        <main>
-          <Hero />
-          <ProjectsSection />
-          <ResumeSection />
-          <ContactSection />
-        </main>
-        <Footer />
-      </div>
+      <NavigationContextMenu>
+        <div className="min-h-screen">
+          <Navigation />
+          <main>
+            <section id="hero">
+              <Hero />
+            </section>
+            <ProjectsSection />
+            <ResumeSection />
+            <ContactSection />
+          </main>
+          <Footer />
+        </div>
+      </NavigationContextMenu>
     </>
   );
 };
