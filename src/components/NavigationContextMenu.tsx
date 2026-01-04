@@ -30,7 +30,7 @@ const NavigationContextMenu = ({ children }: NavigationContextMenuProps) => {
   return (
     <ContextMenu>
       <ContextMenuTrigger asChild>{children}</ContextMenuTrigger>
-      <ContextMenuContent className="w-48 font-mono border-2 border-retro-navy dark:border-retro-amber bg-retro-cream dark:bg-retro-charcoal">
+      <ContextMenuContent className="w-48 font-mono border-2 border-retro-navy dark:border-retro-amber bg-[#f5f0e1] dark:bg-[#2a2a2a] shadow-lg z-50">
         <ContextMenuLabel className="font-display text-retro-navy dark:text-retro-amber">
           &gt; Navigate_
         </ContextMenuLabel>
