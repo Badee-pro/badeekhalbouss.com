@@ -1,17 +1,16 @@
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="py-8 border-t-2 border-foreground bg-card relative z-10">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-retro text-lg text-muted-foreground">
-            © {currentYear} Badee Khalbouss. All rights reserved.
-          </p>
-          <p className="font-retro text-lg text-muted-foreground">
-            <span className="text-primary">&gt;</span> Built with React + TypeScript
-          </p>
-        </div>
+    <footer className="py-6 border-t border-border">
+      <div className="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-muted-foreground font-body">
+        <p>© {new Date().getFullYear()} Badee Khalbouss</p>
+        <a
+          href="https://cs.uwaterloo.ca/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-primary transition-colors"
+        >
+          cs.uwaterloo.ca
+        </a>
       </div>
     </footer>
   );
