@@ -18,9 +18,14 @@ const Hero = () => {
           <h1 className="font-pixel text-xl md:text-2xl lg:text-3xl leading-relaxed">
             Badee Khalbouss
           </h1>
-          <p className="font-retro text-2xl text-primary">
+          <a
+            href="https://cs.uwaterloo.ca/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-retro text-2xl text-primary hover:underline transition-colors"
+          >
             CS @ University of Waterloo
-          </p>
+          </a>
           <p className="font-retro text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto">
             Full-stack developer passionate about building innovative solutions
             at the intersection of AI and web technologies.
