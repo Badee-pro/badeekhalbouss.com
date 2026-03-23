@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import ProjectsSection from "@/components/sections/ProjectsSection";
-import ResumeSection from "@/components/sections/ResumeSection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -31,7 +31,7 @@ const Index = () => {
             <Hero />
           </section>
           <ProjectsSection />
-          <ResumeSection />
+          <ExperienceSection />
           <ContactSection />
         </main>
         <Footer />

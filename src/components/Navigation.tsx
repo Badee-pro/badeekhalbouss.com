@@ -13,7 +13,7 @@ const Navigation = () => {
 
   const navLinks = [
     { href: "#projects", label: "Projects" },
-    { href: "#resume", label: "Resume" },
+    { href: "#experience", label: "Experience" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -24,9 +24,9 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b-2 border-foreground ${
         scrolled
-          ? "bg-background border-b-2 border-foreground py-3"
+          ? "bg-background py-3"
           : "bg-background/80 backdrop-blur-sm py-4"
       }`}
     >
