@@ -4,55 +4,54 @@
 
 @layer base {
   :root {
-    --background: 60 10% 95%;
-    --foreground: 220 15% 15%;
+    --background: 220 15% 90%;
+    --foreground: 220 20% 12%;
 
-    --card: 60 15% 92%;
-    --card-foreground: 220 15% 15%;
+    --card: 220 12% 86%;
+    --card-foreground: 220 20% 12%;
 
-    --popover: 60 10% 95%;
-    --popover-foreground: 220 15% 15%;
+    --popover: 220 15% 90%;
+    --popover-foreground: 220 20% 12%;
 
-    --primary: 142 50% 35%;
-    --primary-foreground: 60 10% 95%;
+    --primary: 142 50% 32%;
+    --primary-foreground: 220 15% 90%;
 
-    --secondary: 60 10% 88%;
-    --secondary-foreground: 220 15% 15%;
+    --secondary: 220 12% 82%;
+    --secondary-foreground: 220 20% 12%;
 
-    --muted: 60 8% 85%;
-    --muted-foreground: 220 10% 40%;
+    --muted: 220 10% 78%;
+    --muted-foreground: 220 12% 38%;
 
-    --accent: 142 50% 35%;
-    --accent-foreground: 60 10% 95%;
+    --accent: 142 50% 32%;
+    --accent-foreground: 220 15% 90%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 60 10% 95%;
+    --destructive-foreground: 220 15% 90%;
 
-    --border: 220 10% 75%;
-    --input: 220 10% 75%;
-    --ring: 142 50% 35%;
+    --border: 220 12% 70%;
+    --input: 220 12% 70%;
+    --ring: 142 50% 32%;
 
     --radius: 0px;
 
-    /* Custom tokens */
     --font-display: 'Press Start 2P', monospace;
     --font-body: 'IBM Plex Mono', monospace;
     --font-retro: 'VT323', monospace;
     
-    --shadow-retro: 4px 4px 0px hsl(220 15% 15%);
-    --shadow-retro-sm: 2px 2px 0px hsl(220 15% 15%);
-    --shadow-retro-hover: 6px 6px 0px hsl(220 15% 15%);
+    --shadow-retro: 4px 4px 0px hsl(220 20% 12%);
+    --shadow-retro-sm: 2px 2px 0px hsl(220 20% 12%);
+    --shadow-retro-hover: 6px 6px 0px hsl(220 20% 12%);
     
     --transition-smooth: all 0.2s ease;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 220 15% 88%;
+    --sidebar-foreground: 220 15% 20%;
+    --sidebar-primary: 220 15% 12%;
+    --sidebar-primary-foreground: 220 15% 90%;
+    --sidebar-accent: 220 12% 82%;
+    --sidebar-accent-foreground: 220 15% 12%;
+    --sidebar-border: 220 12% 75%;
+    --sidebar-ring: 142 50% 32%;
   }
 
   .dark {
