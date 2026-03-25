@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import uwLogo from "@/assets/uw-logo.png";
 
 const Hero = () => {
   const handleScrollTo = (id: string) => {
@@ -25,13 +26,13 @@ const Hero = () => {
                 href="https://cs.uwaterloo.ca/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline transition-colors"
+                className="underline hover:text-primary/80 transition-colors"
               >
                 University of Waterloo
               </a>
             </p>
             <img
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/University_of_Waterloo_seal.svg/150px-University_of_Waterloo_seal.svg.png"
+              src={uwLogo}
               alt="University of Waterloo logo"
               className="w-8 h-8 object-contain"
             />
