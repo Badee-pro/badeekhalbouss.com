@@ -3,6 +3,8 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
+import EventsSection from "@/components/sections/EventsSection";
+import GallerySection from "@/components/sections/GallerySection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -13,7 +15,7 @@ const Index = () => {
         <title>Badee Khalbouss | CS @ UWaterloo</title>
         <meta
           name="description"
-          content="Computer Science student at University of Waterloo. Full-stack developer passionate about building innovative solutions."
+          content="Software developer driven by a passion for AI and creating the future through innovative technology."
         />
         <meta property="og:title" content="Badee Khalbouss | CS Portfolio" />
         <meta
@@ -21,7 +23,7 @@ const Index = () => {
           content="Computer Science student at University of Waterloo building cool stuff."
         />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://yourname.dev" />
+        <link rel="canonical" href="https://badeekhalbouss.lovable.app" />
       </Helmet>
 
       <div className="min-h-screen">
@@ -32,6 +34,8 @@ const Index = () => {
           </section>
           <ProjectsSection />
           <ExperienceSection />
+          <EventsSection />
+          <GallerySection />
           <ContactSection />
         </main>
         <Footer />
