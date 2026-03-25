@@ -18,14 +18,24 @@ const Hero = () => {
           <h1 className="font-pixel text-xl md:text-2xl lg:text-3xl leading-relaxed">
             Badee Khalbouss
           </h1>
-          <a
-            href="https://cs.uwaterloo.ca/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-retro text-2xl text-primary hover:underline transition-colors"
-          >
-            CS @ University of Waterloo
-          </a>
+          <div className="flex items-center justify-center gap-3">
+            <p className="font-retro text-2xl text-primary">
+              Computer Science @{" "}
+              <a
+                href="https://cs.uwaterloo.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline transition-colors"
+              >
+                University of Waterloo
+              </a>
+            </p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/University_of_Waterloo_seal.svg/150px-University_of_Waterloo_seal.svg.png"
+              alt="University of Waterloo logo"
+              className="w-8 h-8 object-contain"
+            />
+          </div>
           <p className="font-retro text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto">
             Software developer driven by a passion for AI and creating the future through innovative technology.
           </p>
@@ -34,8 +44,8 @@ const Hero = () => {
           </p>
 
           <div className="flex justify-center gap-4 pt-4">
-            <Button variant="retro" size="lg" onClick={() => handleScrollTo("#projects")}>
-              Projects
+            <Button variant="retro" size="lg" onClick={() => handleScrollTo("#experience")}>
+              Experience
             </Button>
             <Button variant="retro-outline" size="lg" onClick={() => handleScrollTo("#contact")}>
               Contact
