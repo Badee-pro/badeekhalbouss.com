@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+
 const ExperienceSection = () => {
   const experience = [
     {
@@ -26,16 +28,46 @@ const ExperienceSection = () => {
     },
   ];
 
-  const skills = ["TypeScript", "Python", "Java", "C++", "React", "Node.js", "Next.js", "Swift", "TailwindCSS", "Git", "Docker", "AWS", "PostgreSQL"];
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          experience.forEach((_, i) => {
+            setTimeout(() => {
+              setVisibleItems((prev) => [...prev, i]);
+            }, i * 200);
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="experience" className="py-20 bg-secondary/30">
+    <section id="experience" className="py-20 bg-secondary/30" ref={sectionRef}>
       <div className="container mx-auto px-6 max-w-4xl">
         <h2 className="font-pixel text-2xl md:text-3xl mb-10">Experience</h2>
 
-        <div className="space-y-4 mb-12">
+        <div className="space-y-4">
           {experience.map((job, i) => (
-            <div key={i} className="border-l-2 border-primary pl-5 py-2">
+            <div
+              key={i}
+              className="border-l-2 border-primary pl-5 py-2 transition-all duration-500"
+              style={{
+                opacity: visibleItems.includes(i) ? 1 : 0,
+                transform: visibleItems.includes(i) ? "translateY(0)" : "translateY(20px)",
+              }}
+            >
               <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
                 <p className="font-body">
                   <span className="font-semibold">{job.title}</span>
@@ -56,15 +88,6 @@ const ExperienceSection = () => {
                 <p className="font-retro text-lg text-muted-foreground shrink-0">{job.period}</p>
               </div>
             </div>
-          ))}
-        </div>
-
-        <h3 className="font-retro text-2xl text-primary mb-4">Skills</h3>
-        <div className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
-            <span key={skill} className="px-3 py-1 border border-border font-retro text-base text-muted-foreground">
-              {skill}
-            </span>
           ))}
         </div>
       </div>
