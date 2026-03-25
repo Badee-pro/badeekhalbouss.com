@@ -27,8 +27,10 @@ const Hero = () => {
             CS @ University of Waterloo
           </a>
           <p className="font-retro text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto">
-            Full-stack developer passionate about building innovative solutions
-            at the intersection of AI and web technologies.
+            Software developer driven by a passion for AI and creating the future through innovative technology.
+          </p>
+          <p className="font-retro text-lg text-muted-foreground">
+            Hamilton | Waterloo | Riyadh
           </p>
 
           <div className="flex justify-center gap-4 pt-4">
