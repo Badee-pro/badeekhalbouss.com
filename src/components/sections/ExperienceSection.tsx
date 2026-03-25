@@ -10,7 +10,7 @@ const ExperienceSection = () => {
       title: "Mobile App Developer",
       company: "Apple Inc.",
       url: "https://apple.com",
-      period: "Jun 2024 – Aug 2024",
+      period: "2024",
     },
     {
       title: "Programming Team Member",

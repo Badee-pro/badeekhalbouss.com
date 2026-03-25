@@ -8,11 +8,11 @@ const XIcon = ({ className }: { className?: string }) => (
 
 const ContactSection = () => {
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/Badee-pro', label: 'GitHub' },
+    { icon: Mail, href: 'mailto:bkhalbou@uwaterloo.ca', label: 'Email' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/badee-khalbouss/', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/Badee-pro', label: 'GitHub' },
     { icon: XIcon, href: 'https://x.com/yourname', label: 'X' },
     { icon: Instagram, href: 'https://www.instagram.com/badee.tapatio', label: 'Instagram' },
-    { icon: Mail, href: 'mailto:bkhalbou@uwaterloo.ca', label: 'Email' },
   ];
 
   return (
