@@ -13,9 +13,6 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center space-y-6">
-          <p className="font-retro text-xl text-muted-foreground">
-            Hello, I'm
-          </p>
           <h1 className="font-pixel text-xl md:text-2xl lg:text-3xl leading-relaxed">
             Badee Khalbouss
           </h1>
@@ -44,14 +41,6 @@ const Hero = () => {
             Hamilton | Waterloo | Riyadh
           </p>
 
-          <div className="flex justify-center gap-4 pt-4">
-            <Button variant="retro" size="lg" onClick={() => handleScrollTo("#experience")}>
-              Experience
-            </Button>
-            <Button variant="retro-outline" size="lg" onClick={() => handleScrollTo("#contact")}>
-              Contact
-            </Button>
-          </div>
         </div>
       </div>
     </section>
