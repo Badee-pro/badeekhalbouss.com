@@ -55,7 +55,7 @@ const GallerySection = () => {
 
   return (
     <section id="archive" className="py-20 bg-secondary/30" ref={sectionRef}>
-      <div className="container mx-auto px-6 max-w-3xl">
+      <div className="container mx-auto px-6 max-w-xl">
         <h2 className="font-pixel text-2xl md:text-3xl mb-10">Archive</h2>
 
         <div
