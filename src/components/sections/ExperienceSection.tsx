@@ -9,7 +9,7 @@ const ExperienceSection = () => {
       period: "2025 – Present",
     },
     {
-      title: "Mobile App Developer",
+      title: "Mobile App Developer COOP",
       company: "Apple Inc.",
       url: "https://apple.com",
       period: "2024",
@@ -18,12 +18,6 @@ const ExperienceSection = () => {
       title: "Programming Team Member",
       company: "First Robotics",
       url: "https://firstroboticscanada.org",
-      period: "2023 – 2025",
-    },
-    {
-      title: "Freelance Developer",
-      company: "",
-      url: "",
       period: "2023 – 2025",
     },
   ];
