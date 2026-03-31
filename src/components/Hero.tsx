@@ -1,23 +1,6 @@
-import { useState, useEffect } from "react";
 import uwLogo from "@/assets/uw-logo.png";
 
 const Hero = () => {
-  const [count, setCount] = useState(0);
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem("visit-counter");
-    if (saved) setCount(parseInt(saved, 10));
-  }, []);
-
-  const handleClick = () => {
-    const newCount = count + 1;
-    setCount(newCount);
-    localStorage.setItem("visit-counter", String(newCount));
-    setAnimate(true);
-    setTimeout(() => setAnimate(false), 300);
-  };
-
   return (
     <section className="min-h-screen flex items-center justify-center">
       <div className="container mx-auto px-6">
@@ -49,8 +32,6 @@ const Hero = () => {
           <p className="font-retro text-lg text-muted-foreground">
             Hamilton | Waterloo | Riyadh
           </p>
-
-          {/* Goose counter is fixed to bottom-right */}
         </div>
       </div>
     </section>
