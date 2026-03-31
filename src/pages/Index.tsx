@@ -40,6 +40,7 @@ const Index = () => {
           <ContactSection />
         </main>
         <Footer />
+        <GooseCounter />
       </div>
     </>
   );
