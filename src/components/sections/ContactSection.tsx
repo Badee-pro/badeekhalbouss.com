@@ -19,9 +19,9 @@ const ContactSection = () => {
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-6 max-w-4xl text-center">
         <h2 className="font-pixel text-2xl md:text-3xl mb-4">Get In Touch</h2>
-        <p className="font-retro text-xl text-muted-foreground mb-8">
+        <a href="mailto:bkhalbou@uwaterloo.ca" className="font-retro text-xl text-muted-foreground hover:text-primary transition-colors mb-8 inline-block">
           bkhalbou@uwaterloo.ca
-        </p>
+        </a>
 
         <div className="flex justify-center gap-5 mb-10">
           {socialLinks.map(social => (
