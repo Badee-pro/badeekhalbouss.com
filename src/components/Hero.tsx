@@ -50,18 +50,7 @@ const Hero = () => {
             Hamilton | Waterloo | Riyadh
           </p>
 
-          <button
-            onClick={handleClick}
-            className="mx-auto flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border bg-card hover:bg-accent/50 transition-colors font-retro text-sm text-muted-foreground hover:text-foreground"
-          >
-            <span>👆</span>
-            <span
-              className={`inline-block transition-transform duration-300 ${animate ? "scale-125" : "scale-100"}`}
-            >
-              {count}
-            </span>
-            <span>clicks</span>
-          </button>
+          {/* Goose counter is fixed to bottom-right */}
         </div>
       </div>
     </section>
