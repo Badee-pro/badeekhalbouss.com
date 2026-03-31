@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import GooseCounter from "@/components/GooseCounter";
 
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import EventsSection from "@/components/sections/EventsSection";
@@ -39,6 +40,7 @@ const Index = () => {
           <ContactSection />
         </main>
         <Footer />
+        <GooseCounter />
       </div>
     </>
   );

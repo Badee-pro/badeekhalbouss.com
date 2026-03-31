@@ -1,23 +1,6 @@
-import { useState, useEffect } from "react";
 import uwLogo from "@/assets/uw-logo.png";
 
 const Hero = () => {
-  const [count, setCount] = useState(0);
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem("visit-counter");
-    if (saved) setCount(parseInt(saved, 10));
-  }, []);
-
-  const handleClick = () => {
-    const newCount = count + 1;
-    setCount(newCount);
-    localStorage.setItem("visit-counter", String(newCount));
-    setAnimate(true);
-    setTimeout(() => setAnimate(false), 300);
-  };
-
   return (
     <section className="min-h-screen flex items-center justify-center">
       <div className="container mx-auto px-6">
@@ -49,19 +32,6 @@ const Hero = () => {
           <p className="font-retro text-lg text-muted-foreground">
             Hamilton | Waterloo | Riyadh
           </p>
-
-          <button
-            onClick={handleClick}
-            className="mx-auto flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border bg-card hover:bg-accent/50 transition-colors font-retro text-sm text-muted-foreground hover:text-foreground"
-          >
-            <span>👆</span>
-            <span
-              className={`inline-block transition-transform duration-300 ${animate ? "scale-125" : "scale-100"}`}
-            >
-              {count}
-            </span>
-            <span>clicks</span>
-          </button>
         </div>
       </div>
     </section>
