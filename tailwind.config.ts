@@ -14,10 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["'Press Start 2P'", "monospace"],
-        body: ["'IBM Plex Mono'", "monospace"],
+        display: ["'Space Mono'", "monospace"],
+        body: ["'Space Mono'", "monospace"],
         retro: ["'VT323'", "monospace"],
-        pixel: ["'Press Start 2P'", "monospace"],
+        pixel: ["'Space Mono'", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
