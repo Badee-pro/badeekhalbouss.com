@@ -6,21 +6,9 @@ import frcChampionship from "@/assets/frc-championship.jpg";
 
 const GallerySection = () => {
   const images = [
-    {
-      src: vivatechBooth,
-      alt: "VivaTech 2025 - Paris",
-      description: "Our startup booth at VivaTech 2025, Paris",
-    },
-    {
-      src: gtcNvidia,
-      alt: "GTC NVIDIA 2025 - Paris",
-      description: "GTC NVIDIA 2025 conference in Paris",
-    },
-    {
-      src: frcChampionship,
-      alt: "First Robotics Championship",
-      description: "Winning the First Robotics Championship 2025",
-    },
+    { src: vivatechBooth, alt: "VivaTech 2025 - Paris", description: "VivaTech 2025, Paris" },
+    { src: gtcNvidia, alt: "GTC NVIDIA 2025 - Paris", description: "GTC NVIDIA 2025, Paris" },
+    { src: frcChampionship, alt: "First Robotics Championship", description: "FRC Championship 2025" },
   ];
 
   const [isVisible, setIsVisible] = useState(false);
@@ -44,28 +32,28 @@ const GallerySection = () => {
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
     const amount = scrollRef.current.clientWidth * 0.75;
-    scrollRef.current.scrollBy({
-      left: direction === "left" ? -amount : amount,
-      behavior: "smooth",
-    });
+    scrollRef.current.scrollBy({ left: direction === "left" ? -amount : amount, behavior: "smooth" });
   };
 
   return (
-    <section id="archive" className="py-20 bg-secondary/30" ref={sectionRef}>
+    <section id="archive" className="py-24 border-t border-dashed border-border" ref={sectionRef}>
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="font-pixel text-2xl md:text-3xl">Archive</h2>
+        <div className="flex items-end justify-between mb-10">
+          <div>
+            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2">Gallery</p>
+            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-wide">Archive</h2>
+          </div>
           <div className="flex gap-2">
             <button
               onClick={() => scroll("left")}
-              className="p-2 border-2 border-border hover:bg-secondary transition-colors"
+              className="p-2 border border-border hover:border-primary hover:text-primary transition-colors"
               aria-label="Scroll left"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="p-2 border-2 border-border hover:bg-secondary transition-colors"
+              className="p-2 border border-border hover:border-primary hover:text-primary transition-colors"
               aria-label="Scroll right"
             >
               <ChevronRight className="w-4 h-4" />
@@ -75,7 +63,7 @@ const GallerySection = () => {
 
         <div
           ref={scrollRef}
-          className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
+          className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
@@ -87,17 +75,17 @@ const GallerySection = () => {
           {images.map((img, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[280px] md:w-[320px] snap-start border-2 border-border overflow-hidden"
+              className="flex-shrink-0 w-[280px] md:w-[320px] snap-start border border-border overflow-hidden group"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <p className="font-retro text-sm text-muted-foreground p-3">
+              <p className="text-xs tracking-widest uppercase text-muted-foreground p-4">
                 {img.description}
               </p>
             </div>

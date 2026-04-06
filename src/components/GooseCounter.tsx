@@ -28,12 +28,12 @@ const GooseCounter = () => {
     >
       <div className="relative">
         {showPlus && (
-          <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-sm font-bold text-primary animate-float-up pointer-events-none">
+          <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold text-primary animate-float-up pointer-events-none">
             +1
           </span>
         )}
         <span
-          className={`text-4xl transition-transform duration-300 ${
+          className={`text-3xl transition-transform duration-300 ${
             animate ? "scale-125 -rotate-12" : "scale-100 rotate-0"
           } group-hover:scale-110`}
         >
@@ -41,7 +41,7 @@ const GooseCounter = () => {
         </span>
       </div>
       <span
-        className={`font-retro text-xs px-2 py-0.5 rounded-full bg-card border border-border text-muted-foreground transition-transform duration-300 ${
+        className={`text-[10px] tracking-widest uppercase px-2 py-0.5 bg-card border border-border text-muted-foreground transition-transform duration-300 ${
           animate ? "scale-110" : "scale-100"
         }`}
       >
