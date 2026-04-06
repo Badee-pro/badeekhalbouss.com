@@ -39,47 +39,41 @@ const ExperienceSection = () => {
       },
       { threshold: 0.2 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="experience" className="py-20 bg-secondary/30" ref={sectionRef}>
+    <section id="experience" className="py-24 border-t border-dashed border-border" ref={sectionRef}>
       <div className="container mx-auto px-6 max-w-4xl">
-        <h2 className="font-pixel text-2xl md:text-3xl mb-10">Experience</h2>
+        <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2">Work</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-12 uppercase tracking-wide">Experience</h2>
 
-        <div className="space-y-4">
+        <div className="space-y-0">
           {experience.map((job, i) => (
             <div
               key={i}
-              className="border-l-2 border-primary pl-5 py-2 transition-all duration-500"
+              className="border-b border-dashed border-border py-6 transition-all duration-500"
               style={{
                 opacity: visibleItems.includes(i) ? 1 : 0,
                 transform: visibleItems.includes(i) ? "translateY(0)" : "translateY(20px)",
               }}
             >
-              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1">
-                <p className="font-body">
-                  <span className="font-semibold">{job.title}</span>
+              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-wide">{job.title}</p>
                   {job.company && (
-                    <>
-                      {" – "}
-                      <a
-                        href={job.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-retro text-lg text-primary hover:underline transition-colors"
-                      >
-                        {job.company}
-                      </a>
-                    </>
+                    <a
+                      href={job.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-primary hover:underline transition-colors"
+                    >
+                      {job.company}
+                    </a>
                   )}
-                </p>
-                <p className="font-retro text-lg text-muted-foreground shrink-0">{job.period}</p>
+                </div>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground shrink-0">{job.period}</p>
               </div>
             </div>
           ))}

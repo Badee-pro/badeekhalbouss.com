@@ -16,14 +16,18 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-24 border-t border-dashed border-border">
       <div className="container mx-auto px-6 max-w-4xl text-center">
-        <h2 className="font-pixel text-2xl md:text-3xl mb-4">Get In Touch</h2>
-        <a href="mailto:bkhalbou@uwaterloo.ca" className="font-retro text-xl text-muted-foreground hover:text-primary transition-colors mb-8 inline-block">
+        <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-2">Say Hello</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 uppercase tracking-wide">Get In Touch</h2>
+        <a
+          href="mailto:bkhalbou@uwaterloo.ca"
+          className="text-lg text-primary hover:underline transition-colors mb-10 inline-block"
+        >
           bkhalbou@uwaterloo.ca
         </a>
 
-        <div className="flex justify-center gap-5 mb-10">
+        <div className="flex justify-center gap-6 mb-12">
           {socialLinks.map(social => (
             <a
               key={social.label}
@@ -31,9 +35,9 @@ const ContactSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="p-3 text-muted-foreground hover:text-primary transition-colors"
+              className="p-3 text-muted-foreground hover:text-primary transition-colors border border-transparent hover:border-border"
             >
-              <social.icon className="w-6 h-6" />
+              <social.icon className="w-5 h-5" />
             </a>
           ))}
         </div>
@@ -42,7 +46,7 @@ const ContactSection = () => {
           href="https://cs.uwaterloo.ca/"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-retro text-lg text-muted-foreground hover:text-primary transition-colors"
+          className="text-xs tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors"
         >
           cs.uwaterloo.ca
         </a>
