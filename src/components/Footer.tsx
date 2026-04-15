@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex items-center gap-2">
           <a href="https://cs.uwatering.com/#badeekhalbouss.com?nav=prev" className="hover:text-foreground transition-colors">←</a>
           <a href="https://cs.uwatering.com/#badeekhalbouss.com" target="_blank" rel="noopener noreferrer">
-            <img src="https://cs.uwatering.com/icon.black.svg" alt="CS Webring" className="w-6 h-auto opacity-80 hover:opacity-100 transition-opacity invert" />
+            <img src="https://cs.uwatering.com/icon.white.svg" alt="CS Webring" className="w-6 h-auto opacity-80 hover:opacity-100 transition-opacity" />
           </a>
           <a href="https://cs.uwatering.com/#badeekhalbouss.com?nav=next" className="hover:text-foreground transition-colors">→</a>
         </div>
