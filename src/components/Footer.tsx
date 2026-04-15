@@ -5,11 +5,11 @@ const Footer = () => {
         <p>© {new Date().getFullYear()} Badee Khalbouss</p>
 
         <div className="flex items-center gap-2">
-          <a href="https://cs.uwatering.com/badeekhalbouss.com?nav=prev" className="hover:text-foreground transition-colors">←</a>
-          <a href="https://cs.uwatering.com/badeekhalbouss.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://cs.uwatering.com/#badeekhalbouss.com?nav=prev" className="hover:text-foreground transition-colors">←</a>
+          <a href="https://cs.uwatering.com/#badeekhalbouss.com" target="_blank" rel="noopener noreferrer">
             <img src="https://cs.uwatering.com/icon.black.svg" alt="CS Webring" className="w-5 h-auto opacity-60 hover:opacity-100 transition-opacity invert" />
           </a>
-          <a href="https://cs.uwatering.com/badeekhalbouss.com?nav=next" className="hover:text-foreground transition-colors">→</a>
+          <a href="https://cs.uwatering.com/#badeekhalbouss.com?nav=next" className="hover:text-foreground transition-colors">→</a>
         </div>
 
         <a
