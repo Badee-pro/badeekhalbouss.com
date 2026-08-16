@@ -3,12 +3,20 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import vivatechBooth from "@/assets/vivatech-booth.jpg";
 import gtcNvidia from "@/assets/gtc-nvidia.jpg";
 import frcChampionship from "@/assets/frc-championship.jpg";
+import scpcSignage from "@/assets/scpc.jpeg.asset.json";
+import scpcHall from "@/assets/image-3.png.asset.json";
+import pennyOffice from "@/assets/image-4.png.asset.json";
+import scpcBadge from "@/assets/image-5.png.asset.json";
 
 const GallerySection = () => {
   const images = [
     { src: vivatechBooth, alt: "VivaTech 2025 - Paris", description: "VivaTech 2025, Paris" },
     { src: gtcNvidia, alt: "GTC NVIDIA 2025 - Paris", description: "GTC NVIDIA 2025, Paris" },
     { src: frcChampionship, alt: "First Robotics Championship", description: "FRC Championship 2025" },
+    { src: scpcSignage.url, alt: "SCPC 2026 signage in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA" },
+    { src: scpcHall.url, alt: "SCPC 2026 main hall keynote in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA" },
+    { src: pennyOffice.url, alt: "Penny.co office in Bahrain", description: "Penny.co Office, Bahrain" },
+    { src: scpcBadge.url, alt: "SCPC 2026 attendee badge in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA" },
   ];
 
   const [isVisible, setIsVisible] = useState(false);
