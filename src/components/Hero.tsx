@@ -40,7 +40,7 @@ const Hero = () => {
           </p>
 
           <p className="text-xs tracking-widest uppercase text-muted-foreground">
-            Waterloo · Riyadh · Manama
+            Waterloo · Riyadh · Manamah
           </p>
         </div>
       </div>
