@@ -5,6 +5,11 @@ const EventsSection = () => {
       location: "Paris, France",
       year: "2025",
     },
+    {
+      name: "SCPC 2026",
+      location: "Dammam, KSA",
+      year: "2026",
+    },
   ];
 
   return (
