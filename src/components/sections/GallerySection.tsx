@@ -3,10 +3,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import vivatechBooth from "@/assets/vivatech-booth.jpg";
 import gtcNvidia from "@/assets/gtc-nvidia.jpg";
 import frcChampionship from "@/assets/frc-championship.jpg";
-import scpcSignage from "@/assets/scpc.jpeg.asset.json";
-import scpcHall from "@/assets/image-3.png.asset.json";
-import pennyOffice from "@/assets/image-4.png.asset.json";
-import scpcBadge from "@/assets/image-5.png.asset.json";
+import scpcSignage from "@/assets/scpc.jpg.asset.json";
+import scpcHall from "@/assets/image-3.jpg.asset.json";
+import pennyOffice from "@/assets/image-4.jpg.asset.json";
+import scpcBadge from "@/assets/image-5.jpg.asset.json";
 
 const GallerySection = () => {
   const images = [
