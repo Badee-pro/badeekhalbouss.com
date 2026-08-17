@@ -13,10 +13,10 @@ const GallerySection = () => {
     { src: vivatechBooth, alt: "VivaTech 2025 - Paris", description: "VivaTech 2025, Paris" },
     { src: gtcNvidia, alt: "GTC NVIDIA 2025 - Paris", description: "GTC NVIDIA 2025, Paris" },
     { src: frcChampionship, alt: "First Robotics Championship", description: "FRC Championship 2025" },
-    { src: scpcSignage, alt: "SCPC 2026 signage in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA", portrait: true },
-    { src: scpcHall, alt: "SCPC 2026 main hall keynote in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA", portrait: true },
-    { src: pennyOffice, alt: "Penny.co office in Bahrain", description: "Penny.co Office, Bahrain", portrait: true },
-    { src: scpcBadge, alt: "SCPC 2026 attendee badge in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA", portrait: true },
+    { src: scpcSignage, alt: "SCPC 2026 signage in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA" },
+    { src: scpcHall, alt: "SCPC 2026 main hall keynote in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA" },
+    { src: pennyOffice, alt: "Penny.co office in Bahrain", description: "Penny.co Office, Bahrain" },
+    { src: scpcBadge, alt: "SCPC 2026 attendee badge in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA" },
   ];
 
 
