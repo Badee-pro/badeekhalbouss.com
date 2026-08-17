@@ -84,9 +84,11 @@ const GallerySection = () => {
           {images.map((img, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[280px] md:w-[320px] snap-start border border-border overflow-hidden group"
+              className={`flex-shrink-0 snap-start border border-border overflow-hidden group ${
+                img.portrait ? "w-[200px] md:w-[240px]" : "w-[280px] md:w-[320px]"
+              }`}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className={`${img.portrait ? "aspect-[3/4]" : "aspect-[4/3]"} overflow-hidden`}>
                 <img
                   src={img.src}
                   alt={img.alt}
@@ -94,6 +96,7 @@ const GallerySection = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
+
               <p className="text-xs tracking-widest uppercase text-muted-foreground p-4">
                 {img.description}
               </p>
