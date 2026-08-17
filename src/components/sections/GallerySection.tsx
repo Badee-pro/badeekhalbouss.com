@@ -3,20 +3,20 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import vivatechBooth from "@/assets/vivatech-booth.jpg";
 import gtcNvidia from "@/assets/gtc-nvidia.jpg";
 import frcChampionship from "@/assets/frc-championship.jpg";
-import scpcSignage from "@/assets/scpc.jpg.asset.json";
-import scpcHall from "@/assets/image-3.jpg.asset.json";
-import pennyOffice from "@/assets/image-4.jpg.asset.json";
-import scpcBadge from "@/assets/image-5.jpg.asset.json";
+import scpcSignage from "@/assets/scpc.jpg";
+import scpcHall from "@/assets/image-3.jpg";
+import pennyOffice from "@/assets/image-4.jpg";
+import scpcBadge from "@/assets/image-5.jpg";
 
 const GallerySection = () => {
   const images = [
     { src: vivatechBooth, alt: "VivaTech 2025 - Paris", description: "VivaTech 2025, Paris" },
     { src: gtcNvidia, alt: "GTC NVIDIA 2025 - Paris", description: "GTC NVIDIA 2025, Paris" },
     { src: frcChampionship, alt: "First Robotics Championship", description: "FRC Championship 2025" },
-    { src: scpcSignage.url, alt: "SCPC 2026 signage in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA", portrait: true },
-    { src: scpcHall.url, alt: "SCPC 2026 main hall keynote in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA", portrait: true },
-    { src: pennyOffice.url, alt: "Penny.co office in Bahrain", description: "Penny.co Office, Bahrain", portrait: true },
-    { src: scpcBadge.url, alt: "SCPC 2026 attendee badge in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA", portrait: true },
+    { src: scpcSignage, alt: "SCPC 2026 signage in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA", portrait: true },
+    { src: scpcHall, alt: "SCPC 2026 main hall keynote in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA", portrait: true },
+    { src: pennyOffice, alt: "Penny.co office in Bahrain", description: "Penny.co Office, Bahrain", portrait: true },
+    { src: scpcBadge, alt: "SCPC 2026 attendee badge in Dammam, Saudi Arabia", description: "SCPC 2026, Dammam SA", portrait: true },
   ];
 
 
