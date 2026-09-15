@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Download } from "lucide-react";
-import resumePdf from "@/assets/Badee_s_Resume.pdf.asset.json";
+
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
