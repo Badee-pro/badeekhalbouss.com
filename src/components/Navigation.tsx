@@ -49,7 +49,7 @@ const Navigation = () => {
           ))}
           <li>
             <a
-              href="/Badee_Khalbouss_Resume.pdf"
+              href="/cv"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors cursor-pointer border border-dashed border-border/50 hover:border-primary px-3 py-1.5"
