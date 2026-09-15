@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Download } from "lucide-react";
-import resumePdf from "@/assets/Badee_s_Resume.pdf.asset.json";
+
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -49,7 +49,7 @@ const Navigation = () => {
           ))}
           <li>
             <a
-              href={resumePdf.url}
+              href="/Badee_Khalbouss_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors cursor-pointer border border-dashed border-border/50 hover:border-primary px-3 py-1.5"
