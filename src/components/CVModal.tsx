@@ -1,5 +1,14 @@
+import { useEffect, useRef, useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Download, X } from "lucide-react";
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/esm/Page/TextLayer.css";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url
+).toString();
 
 interface CVModalProps {
   open: boolean;
@@ -7,6 +16,23 @@ interface CVModalProps {
 }
 
 const CVModal = ({ open, onOpenChange }: CVModalProps) => {
+  const [numPages, setNumPages] = useState(0);
+  const [width, setWidth] = useState(800);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const measure = () => {
+      if (containerRef.current) setWidth(containerRef.current.clientWidth - 32);
+    };
+    const t = setTimeout(measure, 50);
+    window.addEventListener("resize", measure);
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("resize", measure);
+    };
+  }, [open]);
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
@@ -35,12 +61,18 @@ const CVModal = ({ open, onOpenChange }: CVModalProps) => {
             </button>
           </div>
         </div>
-        <div className="flex-1 overflow-auto bg-muted/20 p-4">
-          <img
-            src="/cv/page-1.png"
-            alt="Badee Khalbouss resume"
-            className="w-full h-auto mx-auto max-w-[800px]"
-          />
+        <div ref={containerRef} className="flex-1 overflow-auto bg-muted/20 p-4">
+          <Document
+            file="/Badee_Khalbouss_Resume.pdf"
+            onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+            loading={<p className="text-xs text-muted-foreground text-center py-8">Loading CV…</p>}
+            error={<p className="text-xs text-muted-foreground text-center py-8">Couldn't load the CV — use Download.</p>}
+            className="flex flex-col items-center gap-4"
+          >
+            {Array.from({ length: numPages }, (_, i) => (
+              <Page key={i} pageNumber={i + 1} width={Math.min(width, 820)} />
+            ))}
+          </Document>
         </div>
 
       </DialogContent>
