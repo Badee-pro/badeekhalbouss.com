@@ -26,25 +26,12 @@ const CVModal = ({ open, onOpenChange }: CVModalProps) => {
             Download
           </a>
         </div>
-        <object
-          data="/Badee_Khalbouss_Resume.pdf"
-          type="application/pdf"
-          className="flex-1 w-full"
+        <iframe
+          src="/Badee_Khalbouss_Resume.pdf"
+          title="Badee Khalbouss Resume PDF"
+          className="flex-1 w-full border-0"
           style={{ height: "calc(85vh - 40px)" }}
-          aria-label="Badee Khalbouss Resume PDF"
-        >
-          <p className="p-6 text-foreground text-sm">
-            Could not display the PDF inline.{" "}
-            <a
-              href="/Badee_Khalbouss_Resume.pdf"
-              className="text-primary underline"
-              download
-            >
-              Download the CV here
-            </a>
-            .
-          </p>
-        </object>
+        />
       </DialogContent>
     </Dialog>
   );
