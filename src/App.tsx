@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index";
-import CVPage from "./pages/CVPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
