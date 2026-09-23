@@ -6,7 +6,7 @@ const ExperienceSection = () => {
       title: "Full Stack Software Developer",
       company: "penny.co",
       url: "https://penny.co",
-      period: "2025 – Present",
+      period: "Aug 2025 – Sep 2026",
     },
     {
       title: "Mobile App Developer COOP",
