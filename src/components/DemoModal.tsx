@@ -27,12 +27,17 @@ const DemoModal = ({ open, onOpenChange }: DemoModalProps) => {
         </div>
         <div className="bg-muted/20 p-4 flex items-center justify-center">
           <video
-            src="/coop-demo.mp4"
+            poster="/coop-tracker-demo-poster.png"
             controls
             autoPlay
             playsInline
-            className="w-full max-h-[75vh] border border-dashed border-border/50"
-          />
+            preload="metadata"
+            className="w-full max-h-[75vh] border border-dashed border-border/50 bg-black"
+          >
+            <source src="/coop-tracker-demo.mp4" type="video/mp4" />
+            <source src="/coop-tracker-demo.webm" type="video/webm" />
+            Your browser can&apos;t play this video.
+          </video>
         </div>
       </DialogContent>
     </Dialog>
