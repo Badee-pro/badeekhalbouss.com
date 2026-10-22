@@ -23,8 +23,8 @@ const ProjectsSection = ({ demoOpen = false }: ProjectsSectionProps) => {
         "Manifest V3 browser extension that reverse-engineers WaterlooWorks' paginated JSON API with the student's own session, syncing 220+ applications in one click via Job-ID upserts that keep notes.",
         "Privacy-first architecture: a static GitHub Pages site with browser storage (no server or accounts), plus a Rails 8 REST API (SQLite) mode.",
       ],
-      live: "#",
-      github: "#",
+      live: "https://badee-pro.github.io/coop-tracker/",
+      github: "https://github.com/Badee-pro/coop-tracker",
       demo: true,
     },
     {
@@ -36,7 +36,7 @@ const ProjectsSection = ({ demoOpen = false }: ProjectsSectionProps) => {
         "Background crawler that discovers every course sub-page, de-duplicates by page ID to prevent loops, and syncs in a minimized window to stay unobtrusive.",
       ],
       live: null,
-      github: "#",
+      github: "https://github.com/Badee-pro/chrome-extension",
       demo: false,
     },
   ];
