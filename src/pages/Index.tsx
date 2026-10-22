@@ -4,12 +4,13 @@ import Hero from "@/components/Hero";
 import GooseCounter from "@/components/GooseCounter";
 
 import ExperienceSection from "@/components/sections/ExperienceSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
 import EventsSection from "@/components/sections/EventsSection";
 import GallerySection from "@/components/sections/GallerySection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const Index = ({ demoOpen = false }: { demoOpen?: boolean }) => {
   return (
     <>
       <Helmet>
@@ -35,6 +36,7 @@ const Index = () => {
           </section>
           
           <ExperienceSection />
+          <ProjectsSection demoOpen={demoOpen} />
           <EventsSection />
           <GallerySection />
           <ContactSection />
