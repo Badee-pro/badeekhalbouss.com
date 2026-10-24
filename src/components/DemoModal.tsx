@@ -1,5 +1,6 @@
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface DemoModalProps {
   open: boolean;
@@ -17,13 +18,15 @@ const DemoModal = ({ open, onOpenChange }: DemoModalProps) => {
           <span className="text-xs tracking-widest uppercase text-muted-foreground">
             Co-op Tracker — Demo
           </span>
-          <button
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={() => onOpenChange(false)}
             aria-label="Close"
-            className="text-muted-foreground hover:text-primary transition-colors"
+            className="h-7 w-7 text-muted-foreground hover:text-primary transition-colors"
           >
             <X className="w-4 h-4" />
-          </button>
+          </Button>
         </div>
         <div className="bg-muted/20 p-4 flex items-center justify-center">
           <video
@@ -32,9 +35,9 @@ const DemoModal = ({ open, onOpenChange }: DemoModalProps) => {
             autoPlay
             playsInline
             preload="metadata"
-            className="w-full max-h-[75vh] border border-dashed border-border/50 bg-black"
+            className="w-full max-h-[75vh] border border-dashed border-border/50 bg-background"
           >
-            <source src="/coop-tracker-demo.mp4" type="video/mp4" />
+            <source src="/media/coop-tracker-demo.mp4" type="video/mp4" />
             <source src="/coop-tracker-demo.webm" type="video/webm" />
             Your browser can&apos;t play this video.
           </video>
