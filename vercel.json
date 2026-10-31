@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/coop-tracker-demo.mp4", "destination": "/index.html" },
+    { "source": "/recital-demo.mp4", "destination": "/index.html" },
     { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
   ]
 }

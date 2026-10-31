@@ -4,6 +4,7 @@ import DemoModal, { DemoVideo } from "@/components/DemoModal";
 
 interface ProjectsSectionProps {
   demoOpen?: boolean;
+  demoProject?: string;
 }
 
 const DEMO_VIDEOS: Record<string, DemoVideo> = {
@@ -15,8 +16,8 @@ const DEMO_VIDEOS: Record<string, DemoVideo> = {
       { src: "/coop-tracker-demo.webm", type: "video/webm" },
     ],
   },
-  "RECITAL": {
-    title: "RECITAL — Demo",
+  "RECITAL AI AGENT": {
+    title: "RECITAL AI AGENT — Demo",
     poster: "/recital-demo-poster.jpg",
     sources: [
       { src: "/media/recital-demo.mp4", type: "video/mp4" },
@@ -25,18 +26,18 @@ const DEMO_VIDEOS: Record<string, DemoVideo> = {
   },
 };
 
-const ProjectsSection = ({ demoOpen = false }: ProjectsSectionProps) => {
+const ProjectsSection = ({ demoOpen = false, demoProject = "Co-op Tracker" }: ProjectsSectionProps) => {
   const [activeDemo, setActiveDemo] = useState<string | null>(
-    demoOpen ? "Co-op Tracker" : null
+    demoOpen ? demoProject : null
   );
 
   useEffect(() => {
-    if (demoOpen) setActiveDemo("Co-op Tracker");
-  }, [demoOpen]);
+    if (demoOpen) setActiveDemo(demoProject);
+  }, [demoOpen, demoProject]);
 
   const projects = [
     {
-      title: "RECITAL",
+      title: "RECITAL AI AGENT",
       tech: ["Python", "FastAPI", "React", "TypeScript", "Ollama", "MLflow"],
       year: "2026",
       points: [

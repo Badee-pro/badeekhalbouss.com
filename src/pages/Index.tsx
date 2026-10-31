@@ -10,7 +10,7 @@ import GallerySection from "@/components/sections/GallerySection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/Footer";
 
-const Index = ({ demoOpen = false }: { demoOpen?: boolean }) => {
+const Index = ({ demoOpen = false, demoProject }: { demoOpen?: boolean; demoProject?: string }) => {
   return (
     <>
       <Helmet>
@@ -36,7 +36,7 @@ const Index = ({ demoOpen = false }: { demoOpen?: boolean }) => {
           </section>
           
           <ExperienceSection />
-          <ProjectsSection demoOpen={demoOpen} />
+          <ProjectsSection demoOpen={demoOpen} demoProject={demoProject} />
           <EventsSection />
           <GallerySection />
           <ContactSection />
