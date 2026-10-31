@@ -1,19 +1,54 @@
 import { useEffect, useState } from "react";
 import { Github, ExternalLink, Play } from "lucide-react";
-import DemoModal from "@/components/DemoModal";
+import DemoModal, { DemoVideo } from "@/components/DemoModal";
 
 interface ProjectsSectionProps {
   demoOpen?: boolean;
 }
 
+const DEMO_VIDEOS: Record<string, DemoVideo> = {
+  "Co-op Tracker": {
+    title: "Co-op Tracker — Demo",
+    poster: "/coop-tracker-demo-poster.png",
+    sources: [
+      { src: "/media/coop-tracker-demo.mp4", type: "video/mp4" },
+      { src: "/coop-tracker-demo.webm", type: "video/webm" },
+    ],
+  },
+  "RECITAL": {
+    title: "RECITAL — Demo",
+    poster: "/recital-demo-poster.jpg",
+    sources: [
+      { src: "/media/recital-demo.mp4", type: "video/mp4" },
+      { src: "/recital-demo.webm", type: "video/webm" },
+    ],
+  },
+};
+
 const ProjectsSection = ({ demoOpen = false }: ProjectsSectionProps) => {
-  const [demoModalOpen, setDemoModalOpen] = useState(demoOpen);
+  const [activeDemo, setActiveDemo] = useState<string | null>(
+    demoOpen ? "Co-op Tracker" : null
+  );
 
   useEffect(() => {
-    if (demoOpen) setDemoModalOpen(true);
+    if (demoOpen) setActiveDemo("Co-op Tracker");
   }, [demoOpen]);
 
   const projects = [
+    {
+      title: "RECITAL",
+      tech: ["Python", "FastAPI", "React", "TypeScript", "Ollama", "MLflow"],
+      year: "2026",
+      points: [
+        "RAG agent for legal contract Q&A and risk review, with a FastAPI backend running background review jobs, a React 19 + TypeScript frontend, and a local Qwen 2.5 7B model via Ollama, so contract data never leaves the machine.",
+        "Clause-aware chunking with contextual headers; benchmarked BM25, embedding (bge-small via fastembed) and hybrid RRF retrieval, shipping embeddings at 0.95 recall@5 and 0.80 MRR.",
+        "Grounding layer that validates every citation tag, checks sentence-level citation coverage and gates off-topic questions by similarity, reaching 91% citation accuracy and 100% correct refusals.",
+        "Added a verification pass to the risk reviewer that raised precision from 0.57 to 0.80 at full recall, with every eval run tracked in MLflow.",
+      ],
+      live: null,
+      github: "https://github.com/Badee-pro/recital",
+      demo: true,
+    },
     {
       title: "Co-op Tracker",
       tech: ["React", "Ruby on Rails", "JavaScript", "MV3 Extension"],
@@ -108,7 +143,7 @@ const ProjectsSection = ({ demoOpen = false }: ProjectsSectionProps) => {
                   </a>
                   {project.demo && (
                     <button
-                      onClick={() => setDemoModalOpen(true)}
+                      onClick={() => setActiveDemo(project.title)}
                       aria-label="Watch demo"
                       className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                     >
@@ -122,7 +157,15 @@ const ProjectsSection = ({ demoOpen = false }: ProjectsSectionProps) => {
         </div>
       </div>
 
-      <DemoModal open={demoModalOpen} onOpenChange={setDemoModalOpen} />
+      {activeDemo && (
+        <DemoModal
+          open={true}
+          onOpenChange={(open) => {
+            if (!open) setActiveDemo(null);
+          }}
+          video={DEMO_VIDEOS[activeDemo]}
+        />
+      )}
     </section>
   );
 };
