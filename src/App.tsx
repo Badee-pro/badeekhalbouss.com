@@ -21,6 +21,8 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/demo" element={<Index demoOpen />} />
+              <Route path="/recital-demo" element={<Index demoOpen demoProject="RECITAL AI AGENT" />} />
+              <Route path="/recital-demo.mp4" element={<Navigate to="/recital-demo" replace />} />
               <Route path="/coop-tracker-demo.mp4" element={<Navigate to="/demo" replace />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
