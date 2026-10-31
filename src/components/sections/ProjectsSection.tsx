@@ -18,7 +18,10 @@ const DEMO_VIDEOS: Record<string, DemoVideo> = {
   "RECITAL": {
     title: "RECITAL — Demo",
     poster: "/recital-demo-poster.jpg",
-    sources: [{ src: "/media/recital-demo.mp4", type: "video/mp4" }],
+    sources: [
+      { src: "/media/recital-demo.mp4", type: "video/mp4" },
+      { src: "/recital-demo.webm", type: "video/webm" },
+    ],
   },
 };
 
