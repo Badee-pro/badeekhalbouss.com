@@ -1,3 +1,6 @@
+export const newestEventsFirst = <T extends { year: string }>(events: T[]): T[] =>
+  [...events].sort((a, b) => Number(b.year) - Number(a.year));
+
 const EventsSection = () => {
   const events = [
     {
@@ -19,7 +22,7 @@ const EventsSection = () => {
         <h2 className="text-2xl md:text-3xl font-bold mb-12 uppercase tracking-wide">Events</h2>
 
         <div className="space-y-0">
-          {events.map((event, i) => (
+          {newestEventsFirst(events).map((event, i) => (
             <div key={i} className="border-b border-dashed border-border py-6">
               <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
                 <div>
