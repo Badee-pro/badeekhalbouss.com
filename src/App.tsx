@@ -1,3 +1,5 @@
+import { useCallback, useState } from "react";
+import LoadingScreen from "@/components/LoadingScreen";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,7 +12,13 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+  const [loading, setLoading] = useState(true);
+  const finishLoading = useCallback(() => setLoading(false), []);
+
+  if (loading) return <LoadingScreen onComplete={finishLoading} />;
+
+  return (
   <HelmetProvider>
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} storageKey="portfolio-theme">
       <QueryClientProvider client={queryClient}>
@@ -31,6 +39,7 @@ const App = () => (
       </QueryClientProvider>
     </ThemeProvider>
   </HelmetProvider>
-);
+  );
+};
 
 export default App;
