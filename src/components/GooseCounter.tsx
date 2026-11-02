@@ -34,7 +34,8 @@ const GooseCounter = () => {
       targetRef.current = {
         // goose faces left, so mirror the rotation around the vertical axis
         angle: Math.max(-MAX_HEAD_ANGLE, Math.min(MAX_HEAD_ANGLE, -angle * 0.35)),
-        px: (dx / dist) * scale,
+        // svg is horizontally flipped, so mirror the pupil x offset
+        px: -(dx / dist) * scale,
         py: (dy / dist) * scale,
       };
     };
