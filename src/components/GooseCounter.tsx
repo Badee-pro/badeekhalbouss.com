@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 
 const MAX_PUPIL_OFFSET = 2.5;
+const MAX_HEAD_ANGLE = 25;
+const EASE = 0.12;
 
 const GooseCounter = () => {
   const [count, setCount] = useState(0);
@@ -9,6 +11,8 @@ const GooseCounter = () => {
   const gooseRef = useRef<HTMLSpanElement>(null);
   const pupilsRef = useRef<SVGGElement>(null);
   const headRef = useRef<SVGGElement>(null);
+  const targetRef = useRef({ angle: 0, px: 0, py: 0 });
+  const currentRef = useRef({ angle: 0, px: 0, py: 0 });
 
   useEffect(() => {
     const saved = localStorage.getItem("goose-counter");
@@ -18,8 +22,7 @@ const GooseCounter = () => {
   useEffect(() => {
     const handleMove = (e: MouseEvent) => {
       const goose = gooseRef.current;
-      const pupils = pupilsRef.current;
-      if (!goose || !pupils) return;
+      if (!goose) return;
       const rect = goose.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
       const cy = rect.top + rect.height / 2;
@@ -27,16 +30,35 @@ const GooseCounter = () => {
       const dy = e.clientY - cy;
       const dist = Math.hypot(dx, dy) || 1;
       const scale = Math.min(dist / 80, 1) * MAX_PUPIL_OFFSET;
-      pupils.style.transform = `translate(${(dx / dist) * scale}px, ${(dy / dist) * scale}px)`;
-      const head = headRef.current;
-      if (head) {
-        const angle = (Math.atan2(dy, dx) * 180) / Math.PI;
-        const clamped = Math.max(-25, Math.min(25, angle * 0.35));
-        head.setAttribute("transform", `rotate(${clamped} 48 30)`);
-      }
+      const angle = (Math.atan2(dy, dx) * 180) / Math.PI;
+      targetRef.current = {
+        // goose faces left, so mirror the rotation around the vertical axis
+        angle: Math.max(-MAX_HEAD_ANGLE, Math.min(MAX_HEAD_ANGLE, -angle * 0.35)),
+        px: (dx / dist) * scale,
+        py: (dy / dist) * scale,
+      };
     };
+
+    let raf: number;
+    const tick = () => {
+      const t = targetRef.current;
+      const c = currentRef.current;
+      c.angle += (t.angle - c.angle) * EASE;
+      c.px += (t.px - c.px) * EASE;
+      c.py += (t.py - c.py) * EASE;
+      headRef.current?.setAttribute("transform", `rotate(${c.angle} 48 30)`);
+      if (pupilsRef.current) {
+        pupilsRef.current.style.transform = `translate(${c.px}px, ${c.py}px)`;
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+
     window.addEventListener("mousemove", handleMove);
-    return () => window.removeEventListener("mousemove", handleMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+      cancelAnimationFrame(raf);
+    };
   }, []);
 
   const handleClick = () => {
@@ -67,7 +89,7 @@ const GooseCounter = () => {
             animate ? "scale-125 -rotate-12" : "scale-100 rotate-0"
           } group-hover:scale-110`}
         >
-          <svg width="36" height="36" viewBox="0 0 64 64" aria-label="goose">
+          <svg width="36" height="36" viewBox="0 0 64 64" aria-label="goose" className="-scale-x-100">
             {/* body */}
             <ellipse cx="28" cy="46" rx="20" ry="12" fill="currentColor" className="text-foreground" />
             {/* tail */}
