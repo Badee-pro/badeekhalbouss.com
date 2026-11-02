@@ -11,4 +11,4 @@
 - [x] Restore old video links to the popup without interrupting playback.
 - [x] Verify resume rendering, downloads, and both demo entry points.
 - [x] Make the goose eyes track the pointer.
-- [ ] Make the goose head turn toward the pointer (eyes too small to see).
+- [x] Make the goose head turn toward the pointer (eyes too small to see).
