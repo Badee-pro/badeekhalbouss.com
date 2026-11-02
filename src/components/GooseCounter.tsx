@@ -8,6 +8,7 @@ const GooseCounter = () => {
   const [showPlus, setShowPlus] = useState(false);
   const gooseRef = useRef<HTMLSpanElement>(null);
   const pupilsRef = useRef<SVGGElement>(null);
+  const headRef = useRef<SVGGElement>(null);
 
   useEffect(() => {
     const saved = localStorage.getItem("goose-counter");
@@ -27,6 +28,12 @@ const GooseCounter = () => {
       const dist = Math.hypot(dx, dy) || 1;
       const scale = Math.min(dist / 80, 1) * MAX_PUPIL_OFFSET;
       pupils.style.transform = `translate(${(dx / dist) * scale}px, ${(dy / dist) * scale}px)`;
+      const head = headRef.current;
+      if (head) {
+        const angle = (Math.atan2(dy, dx) * 180) / Math.PI;
+        const clamped = Math.max(-25, Math.min(25, angle * 0.35));
+        head.setAttribute("transform", `rotate(${clamped} 48 30)`);
+      }
     };
     window.addEventListener("mousemove", handleMove);
     return () => window.removeEventListener("mousemove", handleMove);
@@ -71,16 +78,18 @@ const GooseCounter = () => {
               fill="currentColor"
               className="text-foreground"
             />
-            {/* head */}
-            <circle cx="48" cy="15" r="9" fill="currentColor" className="text-foreground" />
-            {/* beak */}
-            <path d="M56 13 L64 16 L56 19 Z" fill="currentColor" className="text-primary" />
-            {/* eyes */}
-            <circle cx="45" cy="13" r="3.2" fill="hsl(var(--background))" />
-            <circle cx="52" cy="13" r="3.2" fill="hsl(var(--background))" />
-            <g ref={pupilsRef}>
-              <circle cx="45" cy="13" r="1.4" fill="currentColor" className="text-foreground" />
-              <circle cx="52" cy="13" r="1.4" fill="currentColor" className="text-foreground" />
+            {/* head (turns toward the pointer) */}
+            <g ref={headRef}>
+              <circle cx="48" cy="15" r="9" fill="currentColor" className="text-foreground" />
+              {/* beak */}
+              <path d="M56 13 L64 16 L56 19 Z" fill="currentColor" className="text-primary" />
+              {/* eyes */}
+              <circle cx="45" cy="13" r="3.6" fill="hsl(var(--background))" />
+              <circle cx="52" cy="13" r="3.6" fill="hsl(var(--background))" />
+              <g ref={pupilsRef}>
+                <circle cx="45" cy="13" r="1.8" fill="currentColor" className="text-foreground" />
+                <circle cx="52" cy="13" r="1.8" fill="currentColor" className="text-foreground" />
+              </g>
             </g>
           </svg>
         </span>
