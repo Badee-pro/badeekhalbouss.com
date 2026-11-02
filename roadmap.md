@@ -12,3 +12,4 @@
 - [x] Verify resume rendering, downloads, and both demo entry points.
 - [x] Make the goose eyes track the pointer.
 - [x] Make the goose head turn toward the pointer (eyes too small to see).
+- [x] Remove the goose pointer-tracking movement, keep the drawn style.
